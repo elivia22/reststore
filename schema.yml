@@ -1,0 +1,1461 @@
+openapi: 3.0.3
+info:
+  title: STORE
+  version: 1.0.0
+  description: Honor Store mgt system
+paths:
+  /center/center/{center_id}:
+    get:
+      operationId: center_center_retrieve
+      parameters:
+      - in: path
+        name: center_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this center.
+        required: true
+      tags:
+      - center
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Center'
+          description: ''
+    put:
+      operationId: center_center_update
+      parameters:
+      - in: path
+        name: center_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this center.
+        required: true
+      tags:
+      - center
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Center'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Center'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Center'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Center'
+          description: ''
+    patch:
+      operationId: center_center_partial_update
+      parameters:
+      - in: path
+        name: center_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this center.
+        required: true
+      tags:
+      - center
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCenter'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCenter'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCenter'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Center'
+          description: ''
+    delete:
+      operationId: center_center_destroy
+      parameters:
+      - in: path
+        name: center_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this center.
+        required: true
+      tags:
+      - center
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /center/centers/:
+    get:
+      operationId: center_centers_list
+      tags:
+      - center
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Center'
+          description: ''
+    post:
+      operationId: center_centers_create
+      tags:
+      - center
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Center'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Center'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Center'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Center'
+          description: ''
+  /customer/customer/{customer_id}:
+    get:
+      operationId: customer_customer_retrieve
+      parameters:
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this customer.
+        required: true
+      tags:
+      - customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    put:
+      operationId: customer_customer_update
+      parameters:
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this customer.
+        required: true
+      tags:
+      - customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customer'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    patch:
+      operationId: customer_customer_partial_update
+      parameters:
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this customer.
+        required: true
+      tags:
+      - customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomer'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    delete:
+      operationId: customer_customer_destroy
+      parameters:
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this customer.
+        required: true
+      tags:
+      - customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /customer/customers/:
+    get:
+      operationId: customer_customers_list
+      tags:
+      - customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+          description: ''
+    post:
+      operationId: customer_customers_create
+      tags:
+      - customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customer'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+  /invoice/invoice/{invoice_id}:
+    get:
+      operationId: invoice_invoice_retrieve
+      parameters:
+      - in: path
+        name: invoice_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this invoice.
+        required: true
+      tags:
+      - invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+    put:
+      operationId: invoice_invoice_update
+      parameters:
+      - in: path
+        name: invoice_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this invoice.
+        required: true
+      tags:
+      - invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+    patch:
+      operationId: invoice_invoice_partial_update
+      parameters:
+      - in: path
+        name: invoice_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this invoice.
+        required: true
+      tags:
+      - invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoice'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+    delete:
+      operationId: invoice_invoice_destroy
+      parameters:
+      - in: path
+        name: invoice_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this invoice.
+        required: true
+      tags:
+      - invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /invoice/invoices/:
+    get:
+      operationId: invoice_invoices_list
+      tags:
+      - invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+          description: ''
+    post:
+      operationId: invoice_invoices_create
+      tags:
+      - invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+  /location/location/{location_id}:
+    get:
+      operationId: location_location_retrieve
+      parameters:
+      - in: path
+        name: location_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this location.
+        required: true
+      tags:
+      - location
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+          description: ''
+    put:
+      operationId: location_location_update
+      parameters:
+      - in: path
+        name: location_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this location.
+        required: true
+      tags:
+      - location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Location'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Location'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+          description: ''
+    patch:
+      operationId: location_location_partial_update
+      parameters:
+      - in: path
+        name: location_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this location.
+        required: true
+      tags:
+      - location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedLocation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedLocation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedLocation'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+          description: ''
+    delete:
+      operationId: location_location_destroy
+      parameters:
+      - in: path
+        name: location_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this location.
+        required: true
+      tags:
+      - location
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /location/locations/:
+    get:
+      operationId: location_locations_list
+      tags:
+      - location
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+          description: ''
+    post:
+      operationId: location_locations_create
+      tags:
+      - location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Location'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Location'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+          description: ''
+  /order/order/{order_id}:
+    get:
+      operationId: order_order_retrieve
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this order.
+        required: true
+      tags:
+      - order
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+    put:
+      operationId: order_order_update
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this order.
+        required: true
+      tags:
+      - order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+    patch:
+      operationId: order_order_partial_update
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this order.
+        required: true
+      tags:
+      - order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedOrder'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedOrder'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedOrder'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+    delete:
+      operationId: order_order_destroy
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this order.
+        required: true
+      tags:
+      - order
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /order/orders/:
+    get:
+      operationId: order_orders_list
+      tags:
+      - order
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+          description: ''
+    post:
+      operationId: order_orders_create
+      tags:
+      - order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+  /product/:
+    get:
+      operationId: product_list
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+          description: ''
+    post:
+      operationId: product_create
+      tags:
+      - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /product/login/:
+    post:
+      operationId: product_login_create
+      tags:
+      - product
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+          description: ''
+  /product/product/{product_id}:
+    get:
+      operationId: product_product_retrieve
+      parameters:
+      - in: path
+        name: product_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    put:
+      operationId: product_product_update
+      parameters:
+      - in: path
+        name: product_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    patch:
+      operationId: product_product_partial_update
+      parameters:
+      - in: path
+        name: product_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    delete:
+      operationId: product_product_destroy
+      parameters:
+      - in: path
+        name: product_id
+        schema:
+          type: integer
+          title: ID
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /product/products/:
+    get:
+      operationId: product_products_list
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+          description: ''
+    post:
+      operationId: product_products_create
+      tags:
+      - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /product/schema/:
+    get:
+      operationId: product_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /product/user/create/:
+    post:
+      operationId: product_user_create_create
+      tags:
+      - product
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  schemas:
+    AuthToken:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        token:
+          type: string
+          readOnly: true
+      required:
+      - password
+      - token
+      - username
+    Center:
+      type: object
+      properties:
+        center_id:
+          type: integer
+          readOnly: true
+          title: ID
+        center_name:
+          type: string
+          maxLength: 20
+        center_location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - center_id
+      - center_location_id
+      - center_name
+    Customer:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+          readOnly: true
+          title: ID
+        customer_name:
+          type: string
+          maxLength: 50
+        customer_location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - customer_id
+      - customer_location_id
+      - customer_name
+    Invoice:
+      type: object
+      properties:
+        invoice_id:
+          type: integer
+          readOnly: true
+          title: ID
+        invoice_datetime:
+          type: string
+          format: date-time
+          readOnly: true
+        invoice_amount:
+          type: number
+          format: double
+        invoice_center_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - invoice_amount
+      - invoice_center_id
+      - invoice_datetime
+      - invoice_id
+    Location:
+      type: object
+      properties:
+        location_id:
+          type: integer
+          readOnly: true
+          title: ID
+        location_district:
+          type: string
+          maxLength: 20
+        location_ward:
+          type: string
+          maxLength: 20
+      required:
+      - location_district
+      - location_id
+      - location_ward
+    Order:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          readOnly: true
+          title: ID
+        order_product_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        order_invoice_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        order_quantity:
+          type: number
+          format: double
+        order_unit_price:
+          type: number
+          format: double
+        order_total_price:
+          type: number
+          format: double
+        order_description:
+          type: string
+          maxLength: 20
+      required:
+      - order_description
+      - order_id
+      - order_invoice_id
+      - order_product_id
+      - order_quantity
+      - order_total_price
+      - order_unit_price
+    PatchedCenter:
+      type: object
+      properties:
+        center_id:
+          type: integer
+          readOnly: true
+          title: ID
+        center_name:
+          type: string
+          maxLength: 20
+        center_location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedCustomer:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+          readOnly: true
+          title: ID
+        customer_name:
+          type: string
+          maxLength: 50
+        customer_location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedInvoice:
+      type: object
+      properties:
+        invoice_id:
+          type: integer
+          readOnly: true
+          title: ID
+        invoice_datetime:
+          type: string
+          format: date-time
+          readOnly: true
+        invoice_amount:
+          type: number
+          format: double
+        invoice_center_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedLocation:
+      type: object
+      properties:
+        location_id:
+          type: integer
+          readOnly: true
+          title: ID
+        location_district:
+          type: string
+          maxLength: 20
+        location_ward:
+          type: string
+          maxLength: 20
+    PatchedOrder:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          readOnly: true
+          title: ID
+        order_product_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        order_invoice_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        order_quantity:
+          type: number
+          format: double
+        order_unit_price:
+          type: number
+          format: double
+        order_total_price:
+          type: number
+          format: double
+        order_description:
+          type: string
+          maxLength: 20
+    PatchedProduct:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          readOnly: true
+          title: ID
+        product_name:
+          type: string
+          maxLength: 255
+        product_price:
+          type: number
+          format: double
+        product_unit:
+          type: number
+          format: double
+        product_balance:
+          type: number
+          format: double
+        product_description:
+          type: string
+          maxLength: 2083
+        product_created:
+          type: string
+          format: date-time
+          readOnly: true
+    Product:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          readOnly: true
+          title: ID
+        product_name:
+          type: string
+          maxLength: 255
+        product_price:
+          type: number
+          format: double
+        product_unit:
+          type: number
+          format: double
+        product_balance:
+          type: number
+          format: double
+        product_description:
+          type: string
+          maxLength: 2083
+        product_created:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - product_balance
+      - product_created
+      - product_description
+      - product_id
+      - product_name
+      - product_price
+      - product_unit
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
