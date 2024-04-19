@@ -11,8 +11,8 @@ class Product(models.Model):
     product_unit = models.FloatField()
     product_balance = models.FloatField()
     product_description = models.CharField(max_length=2083)
-    product_created_date = models.DateTimeField(auto_now_add=False)
-    # product_created_date = models.DateTimeField(auto_now_add=True)
+    # product_created_date = models.DateTimeField(auto_now_add=False)
+    product_created_date = models.DateTimeField(auto_now_add=True)
     product_created_by = models.CharField(max_length=50)
 
 

@@ -1,13 +1,18 @@
 from django.urls import path
 from django import urls
 from . import views
-from .views import UserCreate
+from .views import UserCreate, IndexView, CustomAuthToken
+# from .views import UserCreate, ProfileView
 from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
-    # path('', CurrentUserView.as_view(), name='user'),
-    path('registration', UserCreate.as_view(), name='registration'),
+    path('create/', UserCreate.as_view(), name='create'),
+    path('api/auth/', views.CustomAuthToken.as_view()),
+    path('index/', IndexView.as_view(), name='index'),
+    path('login/', views.signIn, name='login'),
+    path('logout/', views.signOut, name='logout'),
+    path('profile/', views.currentUser),
 
     # path('login/', name='login'),
     # path('logout/', name='logout'),

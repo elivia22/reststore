@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import TokenVerifyView, TokenObtainPairView,
 
 urlpatterns = [
     path('', ProductList.as_view(), name='products'),
-    # path('view/', views.getProduct),
+    path('view/', views.getProduct),
     # path('add/', views.addProduct),
     path('all/', ProductList.as_view(), name='list_products'),
     path('create/', ProductCreate.as_view(), name='create_product'),

@@ -30,7 +30,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_HEADERS = True 
+CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ALLOWED_ORIGIN = [
+#     "http://localhost:4200",
+# ]
 
 # CORS_ORIGIN_WHITELIST = (
 #     'example.com',
@@ -161,6 +168,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }

@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
+    
 
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
@@ -26,12 +26,12 @@ class ProductCreate(generics.CreateAPIView):
 
 
 # @extend_schema(responses=ProductSerializer)
-# @api_view(['GET'])
-# def getProduct(request):
-#     # person = {'name': 'elivia kabigumila', 'age': 27}
-#     products = Product.objects.all()
-#     serializer = ProductSerializer(products, many=True)
-#     return Response(serializer.data)
+@api_view(['GET'])
+def getProduct(request):
+    # person = {'name': 'elivia kabigumila', 'age': 27}
+    products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
 #
 #
 #
